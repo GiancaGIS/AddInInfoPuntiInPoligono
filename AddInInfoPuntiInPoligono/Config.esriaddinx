@@ -1,0 +1,34 @@
+﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>AddInInfoPuntiInPoligono</Name>
+  <AddInID>{4619f7a0-7fea-4636-841f-85f75c759ec4}</AddInID>
+  <Description>AddIn per analisi di punti in poligono</Description>
+  <Version>1.4</Version>
+  <Image>Images\AddInInfoOggettiInPoligono.png</Image>
+  <Author>Giancarlo Messina</Author>
+  <Company>GiancaGIS</Company>
+  <Date>22/02/2020</Date>
+  <Targets>
+    <Target name="Desktop" version="10.7" />
+  </Targets>
+  <AddIn language="CLR" library="AddInInfoPuntiInPoligono.dll" namespace="AddInInfoPuntiInPoligono">
+    <ArcMap>
+      <Commands>
+        <Tool id="AddInInfoPuntiInPoligono_InfoPuntiInPoligono" class="InfoPuntiInPoligono" message="Premere per analizzare punti e linee in poligono" caption="Punti e linee in Poligono" tip="Analisi spaziali" category="GiancaGIS" image="" />
+        <Button id="AddInInfoPuntiInPoligono_BottoneApriDockable" class="BottoneApriDockable" message="Premere per aprire la Dockable Window" caption="Apri Dockable" tip="Apri Dockable" category="GiancaGIS" image="Images\Dockable.png" />
+      </Commands>
+      <Toolbars>
+        <Toolbar id="AddInInfoPuntiInPoligono_My_Toolbar" caption="GiancaGIS Toolbar Info Punti in Poligono" showInitially="true">
+          <Items>
+            <Tool refID="AddInInfoPuntiInPoligono_InfoPuntiInPoligono" />
+            <Tool refID="AddInInfoPuntiInPoligono_BottoneApriDockable"/>
+          </Items>
+        </Toolbar>
+      </Toolbars>
+      <DockableWindows>
+        <DockableWindow id="AddInInfoPuntiInPoligono_DockablePunti" class="DockablePunti+AddinImpl" caption="Statistiche punti e linee in Poligono" image="Images\DockablePunti.png">
+          <InitialPlacement height="200" width="450" state="pinned" position="float" />
+        </DockableWindow>
+      </DockableWindows>
+    </ArcMap>
+  </AddIn>
+</ESRI.Configuration>
